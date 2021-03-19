@@ -17,7 +17,7 @@ def SqueezeNet(nb_classes, inputs=(3, 224, 224)):
     input_img = Input(shape=inputs)
     conv1 = Convolution2D(
         96, 7, 7, activation='relu', kernel_initializer='glorot_uniform',
-        subsample=(2, 2), border_mode='same', name='conv1')(input_img)
+        strides=(2, 2), border_mode='same', name='conv1')(input_img)
     maxpool1 = MaxPooling2D(
         pool_size=(3, 3), strides=(2, 2), name='maxpool1')(conv1)
 
